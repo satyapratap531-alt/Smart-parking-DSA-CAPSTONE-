@@ -262,6 +262,44 @@ public class QuadTree {
     }
 
     /**
+     * Height of this subtree (a single leaf has depth 1). Exposed so the
+     * demo UI can show that the tree really is subdividing as slots are
+     * added, rather than asking the user to take it on trust.
+     */
+    public int depth() {
+        if (!divided) return 1;
+        return 1 + Math.max(
+                Math.max(northWest.depth(), northEast.depth()),
+                Math.max(southWest.depth(), southEast.depth()));
+    }
+
+    /** Total number of nodes (internal + leaf) in this subtree. */
+    public int nodeCount() {
+        if (!divided) return 1;
+        return 1 + northWest.nodeCount() + northEast.nodeCount()
+                + southWest.nodeCount() + southEast.nodeCount();
+    }
+
+    /** Number of leaf nodes — i.e. how many regions the lot is partitioned into. */
+    public int leafCount() {
+        if (!divided) return 1;
+        return northWest.leafCount() + northEast.leafCount()
+                + southWest.leafCount() + southEast.leafCount();
+    }
+
+    /**
+     * The boundaries of every leaf region, used by the demo UI to draw the
+     * actual QuadTree subdivision over the parking grid.
+     */
+    public void collectLeafBoundaries(List<Boundary> out) {
+        if (!divided) { out.add(boundary); return; }
+        northWest.collectLeafBoundaries(out);
+        northEast.collectLeafBoundaries(out);
+        southWest.collectLeafBoundaries(out);
+        southEast.collectLeafBoundaries(out);
+    }
+
+    /**
      * Convenience: find a slot by id anywhere in the tree. Useful for
      * "car with this ticket/plate is leaving" flows where the app layer
      * only has the id, not the live object.

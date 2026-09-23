@@ -115,6 +115,11 @@ public class ParkingSystem {
         return null;
     }
 
+    /** Direct access to a floor's tree, used by the demo UI for statistics. */
+    public QuadTree getFloorTree(int floorNumber) {
+        return floors.get(floorNumber);
+    }
+
     public int totalSlots() {
         int total = 0;
         for (QuadTree floorTree : floors.values()) {
