@@ -6,17 +6,17 @@ A capstone project for Data Structures & Algorithms that manages and searches pa
 - **Quadtree** spatial partitioning to organise parking slots by location
 - **Point search** to check a specific parking slot quickly
 - **Orthogonal range search** to find all available slots within a rectangular area
-- **slot booking & availability tracking
+- slot booking & availability tracking
 - A desktop user interface to interact with the system
 
 ## Tech Stack
-- Language:Java 
-- UI:Swing 
+- Language: Java 
+- UI: Swing 
 
 ## How to Run
 1. Clone the repo: `git clone https://github.com/satyapratap531-alt/Smart-parking-DSA-CAPSTONE-.git`
 2. Open the `SmartParkingSystem` folder
-3. Open DemoMain.java 
+3. Open DemoMain.java in your IDE (IntelliJ, Eclipse or VS Code)
    Click Run
 
 ## Why Quadtrees?
