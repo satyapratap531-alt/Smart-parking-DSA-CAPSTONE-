@@ -6,10 +6,13 @@ A capstone project for Data Structures & Algorithms that manages and searches pa
 - **Quadtree** spatial partitioning to organise parking slots by location
 - **Point search** to check a specific parking slot quickly
 - **Orthogonal range search** to find all available slots within a rectangular area
-- slot booking & availability tracking
-- A desktop user interface to interact with the system
-- <img width="1917" height="1198" alt="Screenshot 2026-11-19 230142" src="https://github.com/user-attachments/assets/65946b81-baa1-4d57-8d30-988c61112e60" />
+- **Nearest vacant slot** recommendation for a driver's location
+- **Multi-floor support** with a separate quadtree for each floor
+- **Slot booking and availability tracking** with reservation hold times
+- Interactive **Swing desktop UI** with a live map and activity log
 
+## Demo
+- <img width="1917" height="1198" alt="Screenshot 2026-11-19 230142" src="https://github.com/user-attachments/assets/65946b81-baa1-4d57-8d30-988c61112e60" />
 
 ## Tech Stack
 - Language: Java 
